@@ -1,7 +1,10 @@
 name = "ITensorDocs"
 uuid = "421c5ee2-4dae-4799-bb38-a6a9d9332403"
-version = "0.1.12"
+version = "0.1.13"
 authors = ["ITensor developers <support@itensor.org> and contributors"]
+
+[workspace]
+projects = ["benchmark", "dev", "docs", "examples", "test"]
 
 [compat]
 julia = "1.10"
