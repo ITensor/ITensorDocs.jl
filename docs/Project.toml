@@ -1,9 +1,11 @@
-
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 ITensorDocs = "421c5ee2-4dae-4799-bb38-a6a9d9332403"
 Literate = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
 MultiDocumenter = "87ed4bf0-c935-4a67-83c3-2a03bee4197c"
+
+[sources.ITensorDocs]
+path = ".."
 
 [compat]
 Documenter = "1.9"
