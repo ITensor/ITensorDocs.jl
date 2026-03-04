@@ -18,7 +18,7 @@ Building aggregate site into: $(outpath)
 """
 
 @info "Building Documenter site for ITensorDocs"
-include("make_index.jl")
+ITensorFormatter.make_index!(pkgdir(ITensorDocs))
 Documenter.makedocs(;
     sitename = "ITensor ecosystem docs",
     modules = [ITensorDocs],
