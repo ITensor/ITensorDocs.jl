@@ -8,6 +8,7 @@
 # directory (as opposed to `docs/clones`).
 using Documenter: Documenter
 using ITensorDocs: ITensorDocs
+using ITensorFormatter: ITensorFormatter
 using MultiDocumenter: MultiDocumenter
 
 clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
@@ -18,7 +19,7 @@ Building aggregate site into: $(outpath)
 """
 
 @info "Building Documenter site for ITensorDocs"
-include("make_index.jl")
+ITensorFormatter.make_index!(pkgdir(ITensorDocs))
 Documenter.makedocs(;
     sitename = "ITensor ecosystem docs",
     modules = [ITensorDocs],

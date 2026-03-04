@@ -16,7 +16,13 @@ jobs:
           version: "1"
       - name: "Install dependencies"
         run: |-
-          julia --project=docs/ -e 'using Pkg; Pkg.develop(path="."); Pkg.instantiate()'
+          julia --project=docs/ -e '
+          import Pkg
+          Pkg.Registry.add("General")
+          Pkg.Registry.add(Pkg.RegistrySpec(; url="https://github.com/ITensor/ITensorRegistry.git"))
+          Pkg.develop(path=".")
+          Pkg.instantiate()
+          '
       - name: "Aggregate and deploy"
         run: |
           git config user.name github-actions
