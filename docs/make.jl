@@ -8,6 +8,7 @@
 # directory (as opposed to `docs/clones`).
 using Documenter: Documenter
 using ITensorDocs: ITensorDocs
+using ITensorFormatter: ITensorFormatter
 using MultiDocumenter: MultiDocumenter
 
 clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
